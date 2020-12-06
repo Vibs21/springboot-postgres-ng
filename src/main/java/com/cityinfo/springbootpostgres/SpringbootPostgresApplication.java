@@ -1,13 +1,13 @@
-package com.springbootpostgres.angular;
+package com.cityinfo.springbootpostgres;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringbootApplication {
+public class SpringbootPostgresApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringbootApplication.class, args);
+        SpringApplication.run(SpringbootPostgresApplication.class, args);
     }
 
 }

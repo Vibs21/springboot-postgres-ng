@@ -1,4 +1,4 @@
-package com.springbootpostgres.angular;
+package com.cityinfo.springbootpostgres;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
