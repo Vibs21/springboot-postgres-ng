@@ -8,6 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -59,5 +62,12 @@ public class CityController {
         Map<String, Boolean> response = new HashMap<>();
         response.put("deleted", Boolean.TRUE);
         return response;
+    }
+
+    @GetMapping("city/{startDt}/{endDt}")
+    public List<Cityinfo> getCityByDateRange(@PathVariable(value = "startDt") String startDt, @PathVariable(value = "endDt") String endDt) throws ParseException {
+        Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(startDt);
+        Date date2=new SimpleDateFormat("yyyy-MM-dd").parse(endDt);
+        return this.cityRepository.getCityByDateRange(date1, date2);
     }
 }
